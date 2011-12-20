@@ -17,7 +17,7 @@ ouput = thunder.compile( input )({
     '&This is list 3',
     '&This is list 4',
     '&This is list 5',
-    '&This is list 6'
+    '&nbsp;'
   ]
 });
 
