@@ -1,0 +1,17 @@
+{
+  "name": "thunder",
+  "version": "0.0.1",
+  "description": "A lighting fast template parser for node.js",
+  "keywords": [
+    "template", "view", "view paser", "paser",
+    "view engin", "template engin", "template paser"
+  ],
+  "author": "dreamerslab <ben@dreamerslab.com>",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dreamerslab/thunder.git"
+  },
+  "main": "index",
+  "engines": [ "node >= 0.4.0" ]
+}
