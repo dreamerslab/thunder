@@ -92,9 +92,9 @@ returns the compiled function
         render = thunder.compile( input );
 
     // it actually turns to the following function
-    // render = function ( locals ){
+    // function ( locals ){
     //   var __t__='<div>Hello, this is ';__t__+= locals.name ;__t__+=' :)</div>';return __t__;
-    // }
+    // };
 
 ### cached
 
@@ -113,9 +113,9 @@ returns the cached compiled function
 
     // it actually turns to the following function and will be cached
     // so that next time the text does not need to be compiled again
-    // render = function ( locals ){
+    // function ( locals ){
     //   var __t__='<div>Hello, this is ';__t__+= locals.name ;__t__+=' :)</div>';return __t__;
-    // }
+    // };
 
 ### render
 
