@@ -6,35 +6,201 @@
 
 ## Description
 
+  **thunder** is one of the fastest template parser for `node.js`. Checkout the benchmark for its performance. The usage is quite simple, `evaluation`, `interpolation`, and `interpolation with html escaping`. All variables and functions must start with `it` for performance sake. **thunder** works well with `Express`
+
+
+
+## Installation
+
+via npm:
+
+    $ npm install thunder
+
 
 
 ## Syntax
 
 ### Evaluation
 
-> Pattern
+Evaluate javascript expression
 
-    <? ... ?>
+> `<? ?>`
+
+    <? if( it.user ){ ?>
+      <p>User exist</p>
+    <? } ?>
 
 ### Interpolation
 
-> Pattern
+Simple output ( no escape )
 
-    <?= ... ?>
+> `<?= ?>`
+
+    // script = '<script>alert( 'this is harmful' );</script>';
+    <?= it.script ?>
+    // prints out <script>alert( 'this is harmful' );</script>
 
 ### Interpolation with html escaping
 
-> Pattern
+Simple output ( escape ) | `& < > "` --> `&amp; &lt; &gt; &quot;`
 
-    <?- ... ?>
+> `<?- ?>`
+
+    // script = '<script>alert( 'this is gonna be fine' );</script>';
+    <?- it.script ?>
+    // prints out &lt;script&gt;alert( 'this is gonna be fine' );&lt;script/&gt;
+
+
+
+## Usage
+
+> Require the module before using
+
+    var thunder = require( 'thunder' );
+
+### compiled_text
+
+returns the text ready to be compiled for the `compile` function
+
+#### Arguments
+
+  - input: string
+  - options:
+    - compress: bool, default to false
+
+#### Example code
+
+    var input         = '<div>Hello, this is <?= it.name ?> :)</div>',
+        compiled_text = thunder.compiled_text( input );
+
+    console.log( compiled_text );
+    // var __t__='<div>Hello, this is ';__t__+= it.name ;__t__+=' :)</div>';return __t__;
+
+### compile
+
+returns the compiled function
+
+#### Arguments
+
+  - input: string
+  - options:
+    - compress: bool, default to false
+
+#### Example code
+
+    var input  = '<div>Hello, this is <?= it.name ?> :)</div>',
+        render = thunder.compile( input );
+
+    // it actually turns to the following function
+    // render = function ( locals ){
+    //   var __t__='<div>Hello, this is ';__t__+= locals.name ;__t__+=' :)</div>';return __t__;
+    // }
+
+### cached
+
+returns the cached compiled function
+
+#### Arguments
+
+  - input: string
+  - options:
+    - compress: bool, default to false
+
+#### Example code
+
+    var input  = '<div>Hello, this is <?= it.name ?> :)</div>',
+        render = thunder.cached( input );
+
+    // it actually turns to the following function and will be cached
+    // so that next time the text does not need to be compiled again
+    // render = function ( locals ){
+    //   var __t__='<div>Hello, this is ';__t__+= locals.name ;__t__+=' :)</div>';return __t__;
+    // }
+
+### render
+
+returns the output
+
+#### Arguments
+
+  - input: string
+  - locals: obj
+  - options:
+    - compress: bool, default to false
+    - cached: bool, default to false
+
+#### Example code
+
+    var input   = '<div>Hello, this is <?= it.name ?> :)</div>',
+        locals  = { name : 'Bibi' },
+        options = {
+          cached : true,
+          compress : true
+        },
+        output  = thunder.render( input, locals, options );
+
+    console.log( output );
+    // <div>Hello, this is Bibi :)</div>
+
+
+
+## Express
+
+    app.configure( function(){
+      ...
+      app.set( 'view engine', 'html' );
+      app.register( '.html', require( 'thunder' ));
+      // optional
+      app.set( 'view options', {
+        compress : true
+      });
+      ...
+    });
 
 
 
 ## Examples
 
+> Checkout the `examples` folder for more details.
+
+### simple
+
+    $ cd /path/to/thunder/examples/simple
+    $ node run.js
+
+### complex
+
+    $ cd /path/to/thunder/examples/complex
+    $ node run.js
+
+### express
+
+    $ cd /path/to/thunder/examples/express
+    $ npm install -lf
+    $ node app.js
 
 
-## API
+
+## Benchmarks
+
+The followings are some well-known template parsers that I took for Benchmarks. You are welcome to fork it and add more. There are 2 main parts, the compiling speed and the rendering speed. The compiled templates are cached in `jqtpl`, `Swig` and **thunder**. Therefore their benchmarks for compiling is much faster. You can change the compile method from `cached` to `compile` to see the none-cached speed for **thunder**.
+
+> To run the benchmarks just type the following commands in the terminal
+
+    $ cd /path/to/thunder/benchmarks
+    $ npm install -lf
+    $ node run.js
+
+- [doT](https://github.com/olado/doT)
+- [EJS](https://github.com/visionmedia/ejs)
+- [haml-js](https://github.com/creationix/haml-js)
+- [Haml.js](https://github.com/visionmedia/haml.js)
+- [Jade](https://github.com/visionmedia/jade)
+- [jqtpl](https://github.com/kof/node-jqtpl)
+- [jst](https://github.com/shaunlee/node-jst)
+- [nTenjin](https://github.com/QLeelulu/nTenjin)
+- [Swing](https://github.com/paularmstrong/swig)
+- [thunder](https://github.com/dreamerslab/thunder)
 
 
 

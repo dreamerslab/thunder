@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ filters.e( it.title ) }}</title>
+  </head>
+  <body>
+    <h1 class='header1'>{{ filters.e( it.header1 ) }}</h1>
+    <h2 class='header2'>{{ filters.e( it.header2 ) }}</h2>
+    <h3 class='header3'>{{ filters.e( it.header3 ) }}</h3>
+    <h4 class='header4'>{{ filters.e( it.header4 ) }}</h4>
+    <h5 class='header5'>{{ filters.e( it.header5 ) }}</h5>
+    <h6 class='header6'>{{ filters.e( it.header6 ) }}</h6>
+    <ul class='list'>                         )
+      {% for( var i = 0, l = it.list.length; i <l; i++ ){ %}
+      <li class='item'>{{ filters.e( it.list[ i ]) }}</li>
+      {% } %}
+    </ul>
+  </body>
+</html>

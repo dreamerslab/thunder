@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>${title}</title>
+  </head>
+  <body>
+    <h1 class='header1'>${header1}</h1>
+    <h2 class='header2'>${header2}</h2>
+    <h3 class='header3'>${header3}</h3>
+    <h4 class='header4'>${header4}</h4>
+    <h5 class='header5'>${header5}</h5>
+    <h6 class='header6'>${header6}</h6>
+    <ul class='list'>
+      {{each list}}
+      <li class='item'>${$value}</li>
+      {{/each}}
+    </ul>
+  </body>
+</html>

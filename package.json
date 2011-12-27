@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A lighting fast template parser for node.js",
   "keywords": [
-    "template", "view", "view paser", "paser",
+    "template", "view", "view paser", "paser", "html", "html parser"
     "view engin", "template engin", "template paser"
   ],
   "author": "dreamerslab <ben@dreamerslab.com>",
