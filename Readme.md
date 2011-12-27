@@ -186,8 +186,9 @@ returns the output
 The followings are some well-known template parsers that I took for Benchmarks. You are welcome to fork it and add more. There are 2 main parts, the compiling speed and the rendering speed. The compiled templates are cached in `jqtpl`, `Swig` and **thunder**. Therefore their benchmarks for compiling is much faster. You can change the compile method from `cached` to `compile` to see the none-cached speed for **thunder**.
 
 > To run the benchmarks just type the following commands in the terminal
-
-    $ cd /path/to/thunder/benchmarks
+    
+    $ git clone git://github.com/dreamerslab/thunder.git
+    $ cd thunder/benchmarks/
     $ npm install -lf
     $ node run.js
 
