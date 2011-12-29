@@ -37,35 +37,35 @@ shared_vars_escape = {
 
 var fs = require( 'fs' );
 
-var dot_tpl            = fs.readFileSync( './templates/dot.html' ).toString(),
-    dot_tpl_escape     = fs.readFileSync( './templates/dot_escape.html' ).toString(),
+var dot_tpl            = fs.readFileSync( './templates/dot.html', 'utf8' ),
+    dot_tpl_escape     = fs.readFileSync( './templates/dot_escape.html', 'utf8' ),
 
-    ejs_tpl            = fs.readFileSync( './templates/ejs.ejs' ).toString(),
-    ejs_tpl_escape     = fs.readFileSync( './templates/ejs_escape.ejs' ).toString(),
+    ejs_tpl            = fs.readFileSync( './templates/ejs.ejs', 'utf8' ),
+    ejs_tpl_escape     = fs.readFileSync( './templates/ejs_escape.ejs', 'utf8' ),
 
-    haml_tpl           = fs.readFileSync( './templates/haml.haml' ).toString(),
-    haml_tpl_escape    = fs.readFileSync( './templates/haml_escape.haml' ).toString(),
+    haml_tpl           = fs.readFileSync( './templates/haml.haml', 'utf8' ),
+    haml_tpl_escape    = fs.readFileSync( './templates/haml_escape.haml', 'utf8' ),
     
-    hamljs_tpl         = fs.readFileSync( './templates/hamljs.haml' ).toString(),
-    hamljs_tpl_escape  = fs.readFileSync( './templates/hamljs_escape.haml' ).toString(),
+    hamljs_tpl         = fs.readFileSync( './templates/hamljs.haml', 'utf8' ),
+    hamljs_tpl_escape  = fs.readFileSync( './templates/hamljs_escape.haml', 'utf8' ),
 
-    jade_tpl           = fs.readFileSync( './templates/jade.jade' ).toString(),
-    jade_tpl_escape    = fs.readFileSync( './templates/jade_escape.jade' ).toString(),
+    jade_tpl           = fs.readFileSync( './templates/jade.jade', 'utf8' ),
+    jade_tpl_escape    = fs.readFileSync( './templates/jade_escape.jade', 'utf8' ),
 
-    jqtpl_tpl          = fs.readFileSync( './templates/jqtpl.html' ).toString(),
-    jqtpl_tpl_escape   = fs.readFileSync( './templates/jqtpl_escape.html' ).toString(),
+    jqtpl_tpl          = fs.readFileSync( './templates/jqtpl.html', 'utf8' ),
+    jqtpl_tpl_escape   = fs.readFileSync( './templates/jqtpl_escape.html', 'utf8' ),
 
-    jst_tpl            = fs.readFileSync( './templates/jst.html' ).toString(),
-    jst_tpl_escape     = fs.readFileSync( './templates/jst_escape.html' ).toString(),
+    jst_tpl            = fs.readFileSync( './templates/jst.html', 'utf8' ),
+    jst_tpl_escape     = fs.readFileSync( './templates/jst_escape.html', 'utf8' ),
     
-    swig_tpl           = fs.readFileSync( './templates/swig.html' ).toString(),
-    swig_tpl_escape    = fs.readFileSync( './templates/swig_escape.html' ).toString(),
+    swig_tpl           = fs.readFileSync( './templates/swig.html', 'utf8' ),
+    swig_tpl_escape    = fs.readFileSync( './templates/swig_escape.html', 'utf8' ),
     
-    tenjin_tpl         = fs.readFileSync( './templates/tenjin.html' ).toString(),
-    tenjin_tpl_escape  = fs.readFileSync( './templates/tenjin_escape.html' ).toString(),
+    tenjin_tpl         = fs.readFileSync( './templates/tenjin.html', 'utf8' ),
+    tenjin_tpl_escape  = fs.readFileSync( './templates/tenjin_escape.html', 'utf8' ),
 
-    thunder_tpl        = fs.readFileSync( './templates/thunder.html' ).toString(),
-    thunder_tpl_escape = fs.readFileSync( './templates/thunder_escape.html' ).toString();
+    thunder_tpl        = fs.readFileSync( './templates/thunder.html', 'utf8' ),
+    thunder_tpl_escape = fs.readFileSync( './templates/thunder_escape.html', 'utf8' );
 
 
 
