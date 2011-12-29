@@ -200,7 +200,7 @@ The followings are some well-known template parsers that I took for Benchmarks. 
 - [jqtpl](https://github.com/kof/node-jqtpl)
 - [jst](https://github.com/shaunlee/node-jst)
 - [nTenjin](https://github.com/QLeelulu/nTenjin)
-- [Swing](https://github.com/paularmstrong/swig)
+- [Swig](https://github.com/paularmstrong/swig)
 - [thunder](https://github.com/dreamerslab/thunder)
 
 
