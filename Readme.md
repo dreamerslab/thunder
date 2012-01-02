@@ -157,6 +157,13 @@ returns the output
       ...
     });
 
+> To use express `partial`, `helper` and `dynamic helper` just call the method but start with `it`.
+
+    // partial
+    <?= it.partial( 'common/_nav' ) ?>
+    
+    // helper
+    <a class="<?=it.selected( 'somewhere', it.nav_selected )?>" href="">Somewhere</a>
 
 
 ## Examples
