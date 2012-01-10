@@ -64,9 +64,16 @@ returns the text ready to be compiled for the `compile` function
 
 #### Arguments
 
-  - input: string
+  - input:
+    - type: String
+    - desc: Input string to be compiled
   - options:
-    - compress: bool, default to false
+    - type: Object
+    - props:
+      - compress:
+        - type: Boolean
+        - default: false
+        - desc: Whether to compress the output HTML
 
 #### Example code
 
@@ -82,9 +89,16 @@ returns the compiled function
 
 #### Arguments
 
-  - input: string
+  - input:
+    - type: String
+    - desc: Input string to be compiled
   - options:
-    - compress: bool, default to false
+    - type: Object
+    - props:
+      - compress:
+        - type: Boolean
+        - default: false
+        - desc: Whether to compress the output HTML
 
 #### Example code
 
@@ -102,9 +116,16 @@ returns the cached compiled function
 
 #### Arguments
 
-  - input: string
+  - input:
+    - type: String
+    - desc: Input string to be compiled
   - options:
-    - compress: bool, default to false
+    - type: Object
+    - props:
+      - compress:
+        - type: Boolean
+        - default: false
+        - desc: Whether to compress the output HTML
 
 #### Example code
 
@@ -123,11 +144,23 @@ returns the output
 
 #### Arguments
 
-  - input: string
-  - locals: obj
+  - input:
+    - type: String
+    - desc: Input string to be compiled
+  - locals:
+    - type: Object
+    - desc: Variables to be passed to the compiled function
   - options:
-    - compress: bool, default to false
-    - cached: bool, default to false
+    - type: Object
+    - props:
+      - compress:
+        - type: Boolean
+        - default: false
+        - desc: Whether to compress the output HTML
+      - cached:
+        - type: Boolean
+        - default: false
+        - desc: Whether to cache the compiled function
 
 #### Example code
 
@@ -161,9 +194,9 @@ returns the output
 
     // partial
     <?= it.partial( 'common/_nav' ) ?>
-    
+
     // helper
-    <a class="<?=it.selected( 'somewhere', it.nav_selected )?>" href="">Somewhere</a>
+    <a class="<?= it.selected( 'somewhere', it.nav_selected )?>" href="/somewhere">Somewhere</a>
 
 
 ## Examples
@@ -193,7 +226,7 @@ returns the output
 The followings are some well-known template parsers that I took for Benchmarks. You are welcome to fork it and add more. There are 2 main parts, the compiling speed and the rendering speed. The compiled templates are cached in `jqtpl`, `Swig` and **thunder**. Therefore their benchmarks for compiling is much faster. You can change the compile method from `cached` to `compile` to see the none-cached speed for **thunder**.
 
 > To run the benchmarks just type the following commands in the terminal
-    
+
     $ git clone git://github.com/dreamerslab/thunder.git
     $ cd thunder/benchmarks/
     $ npm install -lf
