@@ -1,12 +1,12 @@
 # thunder
 
-  A lighting fast template parser for node.js
+A lighting fast template parser for node.js
 
 
 
 ## Description
 
-  **thunder** is one of the fastest template parsers for `node.js`. Checkout the benchmarks for its performance. The usage is quite simple, `evaluation`, `interpolation`, and `interpolation with html escaping`. All variables and functions must start with `it` for performance sake. **thunder** works well with `Express`, check out the examples folder for the setup.
+**thunder** is one of the fastest template parsers for `node.js`. Checkout the benchmarks for its performance. The usage is quite simple, `evaluation`, `interpolation`, and `interpolation with html escaping`. All variables and functions must start with `it` for performance sake. **thunder** works well with `Express`, check out the examples folder for the setup.
 
 
 
