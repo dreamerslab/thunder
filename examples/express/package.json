@@ -1,9 +1,9 @@
 {
-    "name": "thunder.examples.jade"
+    "name": "thunder.examples"
   , "version": "0.0.1"
   , "private": true
   , "dependencies": {
-      "express": "2.5.2"
+      "express": "2.5.5"
     , "thunder": "0.0.1"
   }
 }
