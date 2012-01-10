@@ -58,7 +58,7 @@ Simple output ( escape ) | `& < > "` --> `&amp; &lt; &gt; &quot;`
 
     var thunder = require( 'thunder' );
 
-### compiled_text
+### thunder.compiled_text( input, options );
 
 returns the text ready to be compiled for the `compile` function
 
@@ -76,7 +76,7 @@ returns the text ready to be compiled for the `compile` function
     console.log( compiled_text );
     // var __t__='<div>Hello, this is ';__t__+= it.name ;__t__+=' :)</div>';return __t__;
 
-### compile
+### thunder.compile( input, options );
 
 returns the compiled function
 
@@ -96,7 +96,7 @@ returns the compiled function
     //   var __t__='<div>Hello, this is ';__t__+= locals.name ;__t__+=' :)</div>';return __t__;
     // };
 
-### cached
+### thunder.cached( input, options );
 
 returns the cached compiled function
 
@@ -117,7 +117,7 @@ returns the cached compiled function
     //   var __t__='<div>Hello, this is ';__t__+= locals.name ;__t__+=' :)</div>';return __t__;
     // };
 
-### render
+### thunder.render( input, locals, options );
 
 returns the output
 
