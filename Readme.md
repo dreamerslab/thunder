@@ -64,16 +64,19 @@ returns the text ready to be compiled for the `compile` function
 
 #### Arguments
 
-  - input:
-    - type: String
-    - desc: Input string to be compiled
-  - options:
-    - type: Object
-    - props:
-      - compress:
-        - type: Boolean
-        - default: false
-        - desc: Whether to compress the output HTML
+> input
+
+    type: String
+    desc: Input string to be compiled
+
+> options:
+
+    type: Object
+    props:
+      compress:
+        type: Boolean
+        default: false
+        desc: Whether to compress the output HTML
 
 #### Example code
 
@@ -89,16 +92,19 @@ returns the compiled function
 
 #### Arguments
 
-  - input:
-    - type: String
-    - desc: Input string to be compiled
-  - options:
-    - type: Object
-    - props:
-      - compress:
-        - type: Boolean
-        - default: false
-        - desc: Whether to compress the output HTML
+> input
+
+    type: String
+    desc: Input string to be compiled
+
+> options
+
+    type: Object
+    props:
+      compress:
+        type: Boolean
+        default: false
+        desc: Whether to compress the output HTML
 
 #### Example code
 
@@ -116,16 +122,19 @@ returns the cached compiled function
 
 #### Arguments
 
-  - input:
-    - type: String
-    - desc: Input string to be compiled
-  - options:
-    - type: Object
-    - props:
-      - compress:
-        - type: Boolean
-        - default: false
-        - desc: Whether to compress the output HTML
+> input
+
+    type: String
+    desc: Input string to be compiled
+
+> options
+
+    type: Object
+    props:
+      compress:
+        type: Boolean
+        default: false
+        desc: Whether to compress the output HTML
 
 #### Example code
 
@@ -144,23 +153,28 @@ returns the output
 
 #### Arguments
 
-  - input:
-    - type: String
-    - desc: Input string to be compiled
-  - locals:
-    - type: Object
-    - desc: Variables to be passed to the compiled function
-  - options:
-    - type: Object
-    - props:
-      - compress:
-        - type: Boolean
-        - default: false
-        - desc: Whether to compress the output HTML
-      - cached:
-        - type: Boolean
-        - default: false
-        - desc: Whether to cache the compiled function
+> input
+
+    type: String
+    desc: Input string to be compiled
+
+> locals
+
+    type: Object
+    desc: Variables to be passed to the compiled function
+
+> options
+
+    type: Object
+    props:
+      compress:
+        type: Boolean
+        default: false
+        desc: Whether to compress the output HTML
+      cached:
+        type: Boolean
+        default: false
+        desc: Whether to cache the compiled function
 
 #### Example code
 
