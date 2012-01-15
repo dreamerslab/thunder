@@ -1,8 +1,7 @@
-var thunder, input, output;
+var thunder = require( '../../lib/thunder' );
+var input   = require( 'fs' ).readFileSync( './input.html', 'utf8' );
 
-thunder = require( '../../lib/thunder' );
-input   = require( 'fs' ).readFileSync( './input.html', 'utf8' );
-ouput   = thunder.render( input ,{
+var ouput = thunder.render( input ,{
   title : '[thunder] Rocks!',
   header1 : "This is header 1",
   header2 : 'This is header 2',

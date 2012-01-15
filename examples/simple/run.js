@@ -1,6 +1,6 @@
-var thunder = require( '../../lib/thunder' ),
-    input   = '<div>Hello, this is <?= it.name ?> :)</div>',
-    render  = thunder.compile( input ),
-    output  = render({ name : 'Bibi' });
+var thunder = require( '../../lib/thunder' );
+var input   = '<div>Hello, this is <?= it.name ?> :)</div>';
+var render  = thunder.compile( input );
+var output  = render({ name : 'Bibi' });
 
 console.log( output );

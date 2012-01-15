@@ -80,8 +80,8 @@ returns the text ready to be compiled for the `compile` function
 
 #### Example code
 
-    var input         = '<div>Hello, this is <?= it.name ?> :)</div>',
-        compiled_text = thunder.compiled_text( input );
+    var input         = '<div>Hello, this is <?= it.name ?> :)</div>';
+    var compiled_text = thunder.compiled_text( input );
 
     console.log( compiled_text );
     // var __t__='<div>Hello, this is ';__t__+= it.name ;__t__+=' :)</div>';return __t__;
@@ -108,8 +108,8 @@ returns the compiled function
 
 #### Example code
 
-    var input  = '<div>Hello, this is <?= it.name ?> :)</div>',
-        render = thunder.compile( input );
+    var input  = '<div>Hello, this is <?= it.name ?> :)</div>';
+    var render = thunder.compile( input );
 
     // it actually turns to the following function
     // function ( locals ){
@@ -138,8 +138,8 @@ returns the cached compiled function
 
 #### Example code
 
-    var input  = '<div>Hello, this is <?= it.name ?> :)</div>',
-        render = thunder.cached( input );
+    var input  = '<div>Hello, this is <?= it.name ?> :)</div>';
+    var render = thunder.cached( input );
 
     // it actually turns to the following function and will be cached
     // so that next time the text does not need to be compiled again
@@ -179,12 +179,14 @@ returns the output
 #### Example code
 
     var input   = '<div>Hello, this is <?= it.name ?> :)</div>',
-        locals  = { name : 'Bibi' },
-        options = {
-          cached : true,
-          compress : true
-        },
-        output  = thunder.render( input, locals, options );
+    var locals  = { name : 'Bibi' };
+        
+    var options = {
+      cached : true,
+      compress : true
+    };
+    
+    var output  = thunder.render( input, locals, options );
 
     console.log( output );
     // <div>Hello, this is Bibi :)</div>
