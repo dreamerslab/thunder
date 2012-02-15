@@ -1,6 +1,6 @@
 # thunder
 
-A lighting fast template parser for node.js
+A lightning fast template parser for node.js
 
 
 
@@ -180,12 +180,12 @@ returns the output
 
     var input   = '<div>Hello, this is <?= it.name ?> :)</div>',
     var locals  = { name : 'Bibi' };
-        
+
     var options = {
       cached : true,
       compress : true
     };
-    
+
     var output  = thunder.render( input, locals, options );
 
     console.log( output );

@@ -1,7 +1,7 @@
 {
   "name"       : "thunder",
-  "version"    : "0.0.1",
-  "description": "A lighting fast template parser for node.js",
+  "version"    : "0.0.2",
+  "description": "A lightning fast template parser for node.js",
   "keywords"   : [
     "template", "view", "view paser", "paser", "html", "html parser",
     "view engin", "template engin", "template paser"
