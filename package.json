@@ -14,5 +14,8 @@
   },
   "main"   : "index",
   "engines": [ "node >= 0.4.0" ],
-  "license": "MIT"
+  "licenses": [{
+    "type": "MIT",
+    "url" : "http://en.wikipedia.org/wiki/MIT_License"
+  }]
 }

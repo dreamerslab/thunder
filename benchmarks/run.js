@@ -115,12 +115,12 @@ var engines = [
     tpl_escape : haml_tpl_escape,
     compile : function (){
       var tmp = haml.compile( this.tpl );
-      
+
       return haml.optimize( tmp );
     },
     compile_escape : function (){
       var tmp = haml.compile( this.tpl_escape );
-      
+
       return haml.optimize( tmp );
     },
     render : function ( locals ){
@@ -174,28 +174,28 @@ var engines = [
     compile : function (){
       // cache
       // return jqtpl.template( 'tmp', this.tpl );
-      
+
       // no cache
       return jqtpl.template( null, this.tpl );
     },
     compile_escape : function (){
       // cache
       // return jqtpl.template( 'tmp_escape', this.tpl_escape );
-      
+
       // no cache
       return jqtpl.template( null, this.tpl_escape );
     },
     render : function ( locals ){
       // cache
       // return jqtpl.tmpl( 'tmp', locals );
-      
+
       // no cache
       return jqtpl.tmpl( compiled.jqtpl, locals );
     },
     render_escape : function ( locals ){
       // cache
       // return jqtpl.tmpl( 'tmp_escape', locals );
-      
+
       // no cache
       return jqtpl.tmpl( compiled.jqtpl_escape, locals );
     }
@@ -286,7 +286,7 @@ var compile_speed = function ( engines, method, count, title ){
     key    = engine.key;
     start  = new Date();
     k      = 0;
-    
+
     console.log('\n' + title + ', compile ' + count + ' times:\n');
     console.log( engine.name, 'running...' );
 
@@ -308,7 +308,7 @@ var render_speed = function ( engines, method, shared_vars, count, title ){
   var i = 0;
   var j = engines.length;
   var k, engine, start, seconds, view;
-  
+
   for(; i < j; i++ ){
     engine = engines[ i ];
     start  = new Date();
@@ -339,7 +339,7 @@ swig.init({
 
 
 
-compile_speed( engines, '', 1000, 'No escape' );
-compile_speed( engines, '_escape', 1000, 'Escape' );
-render_speed( engines, '', shared_vars, 100000, 'No escape' );
-render_speed( engines, '_escape', shared_vars_escape, 100000, 'Escape' );
+compile_speed( engines, '', 10000, 'No escape' );
+compile_speed( engines, '_escape', 10000, 'Escape' );
+render_speed( engines, '', shared_vars, 1000000, 'No escape' );
+render_speed( engines, '_escape', shared_vars_escape, 1000000, 'Escape' );
