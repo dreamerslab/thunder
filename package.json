@@ -1,13 +1,18 @@
 {
   "name"       : "thunder",
-  "version"    : "0.0.2",
-  "description": "A lightning fast template parser for node.js",
+  "version"    : "0.1.0",
+  "description": "One of the fastest JavaScript template engine for Node.js and browsers.",
   "keywords"   : [
     "template", "view", "view paser", "paser", "html", "html parser",
     "view engin", "template engin", "template paser"
   ],
   "author"      : "dreamerslab <ben@dreamerslab.com>",
-  "dependencies": {},
+  "dependencies": {
+    "cli-color": "0.1.7",
+    "mkdirp"   : "0.3.3",
+    "rmdir"    : "0.0.3",
+    "watchr"   : "2.1.2"
+  },
   "repository"  : {
     "type": "git",
     "url" : "https://github.com/dreamerslab/thunder.git"
