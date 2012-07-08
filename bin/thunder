@@ -6,8 +6,9 @@ var cli     = require( '../lib/cli' );
 var args    = process.argv.slice( 2 );
 var command = args.shift();
 
-var input_dir     = __dirname + '/templates/';
-var output_dir    = __dirname + '/views/';
+var cwd           = process.cwd();
+var input_dir     = cwd + '/templates/';
+var output_dir    = cwd + '/views/';
 var use_requirejs = true;
 
 args.forEach( function ( arg ){
