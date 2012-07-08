@@ -1,20 +1,12 @@
 # thunder
 
-A lightning fast template parser for node.js
+A lightning fast JavaScript template engine.
 
 
 
 ## Description
 
-**thunder** is one of the fastest template parsers for `node.js`. Checkout the benchmarks for its performance. The usage is quite simple, `evaluation`, `interpolation`, and `interpolation with html escaping`. All variables and functions must start with `it` for performance sake. **thunder** works well with `Express`, check out the examples folder for the setup.
-
-
-
-## Installation
-
-via npm:
-
-    $ npm install thunder
+**thunder** is one of the fastest JavaScript template engine for Node.js and browsers. Checkout the benchmarks for its performance. The usage is quite simple, `evaluation`, `interpolation`, and `interpolation with html escaping`. All variables and functions must start with `it` for performance sake. **thunder** works well with `Express`, check out the examples folder for the setup.
 
 
 
@@ -22,7 +14,7 @@ via npm:
 
 ### Evaluation
 
-Evaluate javascript expression
+Evaluate JavaScript expression
 
 > `<? ?>`
 
@@ -52,15 +44,147 @@ Simple output ( escape ) | `& < > "` --> `&amp; &lt; &gt; &quot;`
 
 
 
+## Installation
+
+### With node.js
+
+> via npm:
+
+    // in the project root
+    $ npm install thunder
+
+### In the browser
+
+> Install `thunder` in global to use the command line tools. You will need them to compile the HTML templates to JavaScript strings. By default `thunder` looks for all the `.html` files in the dir `templates` in the same dir where the command is called, compile them to JavaScript strings and save them to `views` dir. You can specify the `input` and `output` dir to wherever you want by passing the `-i` and `-o` arguments. Also the default compiled strings are `requirejs` modules. By passing `-r=false` it will use the file name as the template name and attach it to `window` object.
+
+    // make sure you have `node.js` installed
+    $ npm intall thunder -g
+
+    $ thunder
+
+    Usage: thunder [command] [argument(s)]
+
+    Commands:
+      -v, --version    Display coke version
+      h,  help         Display usage information
+      b,  build [args] Precompile templates
+      w,  watch [args] Run coke server
+
+    Arguments for `build` & `watch commands`
+      -i, --input=/new/input/dir   Default: ./templates
+      -o, --output=/new/output/dir Default: ./views
+      -r, --requirejs=false        Default: true
+
+> Copy `thunder.min.js` to your public JavaScript dir.
+
+
+
 ## Usage
 
-> Require the module before using
+For advance usages please checkout the API block.
 
-    var thunder = require( 'thunder' );
+### With node.js
+
+     var thunder = require( 'thunder' );
+     var input   = '<div>Hello, this is <?= it.name ?> :)</div>',
+     var locals  = { name : 'Bibi' };
+     var options = {
+       cached   : true,
+       compress : true
+     };
+
+     var output = thunder.render( input, locals, options );
+
+     console.log( output );
+     // <div>Hello, this is Bibi :)</div>
+
+
+
+### Express
+
+    app.configure( function(){
+      ...
+      app.set( 'view engine', 'html' );
+      app.register( '.html', require( 'thunder' ));
+      // optional
+      app.set( 'view options', {
+        compress : true
+      });
+      ...
+    });
+
+> To use express `partial`, `helper` and `dynamic helper` just call the method but start with `it`.
+
+    // partial
+    <?= it.partial( 'common/_nav' ) ?>
+
+    // helper
+    <a class="<?= it.selected( 'somewhere', it.nav_selected )?>" href="/somewhere">Somewhere</a>
+
+
+
+### In the browser
+
+- Normal useage
+
+<!---->
+
+    // Include necessary JS files
+    <script src="/js/lib/thunder.min.js"></script>
+    <script src="/js/views/index.js"></script>
+    <script>
+      var input   = index,
+      var locals  = { name : 'Bibi' };
+      var options = { cached : true };
+      var output  = thunder.render( input, locals, options );
+
+      console.log( output );
+      // <div>Hello, this is Bibi :)</div>
+    </script>
+
+- With `requirejs`
+
+
+<!---->
+
+    <script src="/js/lib/require.js" data-main="/js/main.js"></script>
+    <script>
+      requirejs.config({
+        baseUrl : '/js/lib',
+        paths   : { views : '../views' }
+      });
+    </script>
+    <script>
+      define( function ( require, exports, module ){
+        var thunder = require( 'thunder' );
+        var input   = require( 'views/index' ),
+        var locals  = { name : 'Bibi' };
+        var options = { cached : true };
+        var output  = thunder.render( input, locals, options );
+
+        console.log( output );
+        // <div>Hello, this is Bibi :)</div>
+      });
+    </script>
+
+
+
+## API
+
+### thunder.html_to_text( input );
+
+Compile the HTML templates to JavaScript strings. It is only used for client-side templates.
+
+#### Arguments
+
+> input
+
+    type: String
+    desc: Input string to be compiled
 
 ### thunder.compiled_text( input, options );
 
-returns the text ready to be compiled for the `compile` function
+Returns the text ready to be compiled for the `compile` function.
 
 #### Arguments
 
@@ -88,7 +212,7 @@ returns the text ready to be compiled for the `compile` function
 
 ### thunder.compile( input, options );
 
-returns the compiled function
+Returns the compiled function.
 
 #### Arguments
 
@@ -118,7 +242,7 @@ returns the compiled function
 
 ### thunder.cached( input, options );
 
-returns the cached compiled function
+Returns the cached compiled function.
 
 #### Arguments
 
@@ -149,7 +273,7 @@ returns the cached compiled function
 
 ### thunder.render( input, locals, options );
 
-returns the output
+Returns the output.
 
 #### Arguments
 
@@ -178,41 +302,19 @@ returns the output
 
 #### Example code
 
-    var input   = '<div>Hello, this is <?= it.name ?> :)</div>',
-    var locals  = { name : 'Bibi' };
+    var input  = '<div>Hello, this is <?= it.name ?> :)</div>',
+    var locals = { name : 'Bibi' };
 
     var options = {
-      cached : true,
+      cached   : true,
       compress : true
     };
 
-    var output  = thunder.render( input, locals, options );
+    var output = thunder.render( input, locals, options );
 
     console.log( output );
     // <div>Hello, this is Bibi :)</div>
 
-
-
-## Express
-
-    app.configure( function(){
-      ...
-      app.set( 'view engine', 'html' );
-      app.register( '.html', require( 'thunder' ));
-      // optional
-      app.set( 'view options', {
-        compress : true
-      });
-      ...
-    });
-
-> To use express `partial`, `helper` and `dynamic helper` just call the method but start with `it`.
-
-    // partial
-    <?= it.partial( 'common/_nav' ) ?>
-
-    // helper
-    <a class="<?= it.selected( 'somewhere', it.nav_selected )?>" href="/somewhere">Somewhere</a>
 
 
 ## Examples
