@@ -1,5 +1,11 @@
 # History
 
+## 0.1.1 / 2012-07-09
+
+- [bug fix] Use `process.cwd()` instead of `__dirname` for current dir
+
+
+
 ## 0.1.0 / 2012-07-08
 
 - [new feature] Client-side support including `precompile` & `watch`
