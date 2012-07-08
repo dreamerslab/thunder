@@ -1,0 +1,56 @@
+#!/usr/bin/env node
+
+var exit    = true;
+var thunder = require( '../index' );
+var cli     = require( '../lib/cli' );
+var args    = process.argv.slice( 2 );
+var command = args.shift();
+
+var input_dir     = __dirname + '/templates/';
+var output_dir    = __dirname + '/views/';
+var use_requirejs = true;
+
+args.forEach( function ( arg ){
+  arg = arg.trim();
+
+  var matched_input   = arg.match( /^(-i=|--input=)(.*)/ );
+  var matched_output  = arg.match( /^(-o=|--output=)(.*)/ );
+  var matched_require = arg.match( /^(-r=|--requirejs=)(.*)/ );
+
+  if( matched_input )   input_dir     = matched_input[ 2 ];
+  if( matched_output )  output_dir    = matched_output[ 2 ];
+  if( matched_require ) use_requirejs = matched_require[ 2 ];
+});
+
+switch( command ){
+  case '-v':
+  case '--version':
+    console.log( thunder.version );
+
+    break;
+
+  case 'b':
+  case 'build':
+    cli.build( input_dir, output_dir, use_requirejs );
+    exit = false;
+
+    break;
+
+  case 'w':
+  case 'watch':
+    cli.watch( input_dir, output_dir, use_requirejs );
+    exit = false;
+
+    break;
+
+  case 'h':
+  case 'help':
+  case '-h':
+  case '--help':
+  default:
+    cli.help();
+
+    break;
+}
+
+exit && process.exit( 0 );
