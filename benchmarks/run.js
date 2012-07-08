@@ -277,6 +277,8 @@ var engines = [
 
 
 var compile_speed = function ( engines, method, count, title ){
+  console.log('\n' + title + ', compile ' + count + ' times:\n');
+
   var i = 0;
   var j = engines.length;
   var k, key, engine, start, seconds;
@@ -287,7 +289,6 @@ var compile_speed = function ( engines, method, count, title ){
     start  = new Date();
     k      = 0;
 
-    console.log('\n' + title + ', compile ' + count + ' times:\n');
     console.log( engine.name, 'running...' );
 
     for(; k < count; k++ ){
@@ -305,6 +306,8 @@ var compile_speed = function ( engines, method, count, title ){
 
 
 var render_speed = function ( engines, method, shared_vars, count, title ){
+  console.log('\n' + title + ', render ' + count + ' times:\n');
+
   var i = 0;
   var j = engines.length;
   var k, engine, start, seconds, view;
@@ -314,7 +317,6 @@ var render_speed = function ( engines, method, shared_vars, count, title ){
     start  = new Date();
     k      = 0;
 
-    console.log('\n' + title + ', render ' + count + ' times:\n');
     console.log( engine.name, 'running...' );
 
     for(; k < count; k++ ){
