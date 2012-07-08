@@ -2,6 +2,9 @@
   "name"       : "thunder",
   "version"    : "0.1.0",
   "description": "One of the fastest JavaScript template engine for Node.js and browsers.",
+  "bin"        : {
+    "thunder": "./bin/thunder"
+  },
   "keywords"   : [
     "template", "view", "view paser", "paser", "html", "html parser",
     "view engin", "template engin", "template paser"
