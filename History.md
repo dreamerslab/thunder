@@ -1,5 +1,11 @@
 # History
 
+## 0.1.2 / 2012-07-09
+
+- [bug fix] Attach `thunder` to `window` instead of calling it on browsers
+
+
+
 ## 0.1.1 / 2012-07-09
 
 - [bug fix] Use `process.cwd()` instead of `__dirname` for current dir
