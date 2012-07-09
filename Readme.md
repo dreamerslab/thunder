@@ -53,7 +53,7 @@ Simple output ( escape ) | `& < > "` --> `&amp; &lt; &gt; &quot;`
     // in the project root
     $ npm install thunder
 
-### In the browser
+### On browsers
 
 > Install `thunder` in global to use the command line tools. You will need them to compile the HTML templates to JavaScript strings. By default `thunder` looks for all the `.html` files in the dir `templates` in the same dir where the command is called, compile them to JavaScript strings and save them to `views` dir. You can specify the `input` and `output` dir to wherever you want by passing the `-i` and `-o` arguments. Also the default compiled strings are `requirejs` modules. By passing `-r=false` it will use the file name as the template name and attach it to `window` object.
 
@@ -123,7 +123,7 @@ For advance usages please checkout the API block.
 
 
 
-### In the browser
+### On browsers
 
 - Normal useage
 
