@@ -1,4 +1,4 @@
-var thunder = require( '../../lib/thunder' );
+var thunder = require( '../../../lib/thunder' );
 var input   = require( 'fs' ).readFileSync( './input.html', 'utf8' );
 
 var ouput = thunder.render( input ,{
