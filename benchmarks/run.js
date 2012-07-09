@@ -73,6 +73,24 @@ var compiled = {};
 
 var engines = [
   {
+    name : 'thunder',
+    key :'thunder',
+    tpl : thunder_tpl,
+    tpl_escape : thunder_tpl_escape,
+    compile : function (){
+      return thunder.cached( this.tpl );
+    },
+    compile_escape : function (){
+      return thunder.cached( this.tpl_escape );
+    },
+    render : function ( locals ){
+      return compiled.thunder( locals );
+    },
+    render_escape : function ( locals ){
+      return compiled.thunder_escape( locals );
+    }
+  },
+  {
     name : 'doT',
     key : 'dot',
     tpl : dot_tpl,
@@ -88,6 +106,42 @@ var engines = [
     },
     render_escape : function ( locals ){
       return compiled.dot_escape( locals );
+    }
+  },
+  {
+    name : 'jst',
+    key : 'jst',
+    tpl : jst_tpl,
+    tpl_escape : jst_tpl_escape,
+    compile : function (){
+      return jst.compile( this.tpl );
+    },
+    compile_escape : function (){
+      return jst.compile( this.tpl_escape );
+    },
+    render : function ( locals ){
+      return compiled.jst( locals );
+    },
+    render_escape : function ( locals ){
+      return compiled.jst_escape( locals );
+    }
+  },
+  {
+    name : 'nTenjin',
+    key : 'tenjin',
+    tpl : tenjin_tpl,
+    tpl_escape : tenjin_tpl_escape,
+    compile : function (){
+      return tenjin.compile( this.tpl );
+    },
+    compile_escape : function (){
+      return tenjin.compile( this.tpl_escape );
+    },
+    render : function ( locals ){
+      return compiled.tenjin( locals );
+    },
+    render_escape : function ( locals ){
+      return compiled.tenjin_escape( locals );
     }
   },
   {
@@ -201,24 +255,6 @@ var engines = [
     }
   },
   {
-    name : 'jst',
-    key : 'jst',
-    tpl : jst_tpl,
-    tpl_escape : jst_tpl_escape,
-    compile : function (){
-      return jst.compile( this.tpl );
-    },
-    compile_escape : function (){
-      return jst.compile( this.tpl_escape );
-    },
-    render : function ( locals ){
-      return compiled.jst( locals );
-    },
-    render_escape : function ( locals ){
-      return compiled.jst_escape( locals );
-    }
-  },
-  {
     name : 'Swig',
     key : 'swig',
     tpl : swig_tpl,
@@ -234,42 +270,6 @@ var engines = [
     },
     render_escape : function ( locals ){
       return compiled.swig_escape( locals );
-    }
-  },
-  {
-    name : 'nTenjin',
-    key : 'tenjin',
-    tpl : tenjin_tpl,
-    tpl_escape : tenjin_tpl_escape,
-    compile : function (){
-      return tenjin.compile( this.tpl );
-    },
-    compile_escape : function (){
-      return tenjin.compile( this.tpl_escape );
-    },
-    render : function ( locals ){
-      return compiled.tenjin( locals );
-    },
-    render_escape : function ( locals ){
-      return compiled.tenjin_escape( locals );
-    }
-  },
-  {
-    name : 'thunder',
-    key :'thunder',
-    tpl : thunder_tpl,
-    tpl_escape : thunder_tpl_escape,
-    compile : function (){
-      return thunder.cached( this.tpl );
-    },
-    compile_escape : function (){
-      return thunder.cached( this.tpl_escape );
-    },
-    render : function ( locals ){
-      return compiled.thunder( locals );
-    },
-    render_escape : function ( locals ){
-      return compiled.thunder_escape( locals );
     }
   }
 ];
@@ -335,8 +335,8 @@ var render_speed = function ( engines, method, shared_vars, count, title ){
 
 jst.configure({ useIt : true });
 swig.init({
-    allowErrors: false,
-    autoescape: false
+    allowErrors : false,
+    autoescape  : false
 });
 
 
