@@ -157,7 +157,7 @@ For advance usages please checkout the API block.
     <script>
       define( function ( require, exports, module ){
         var thunder = require( 'thunder' );
-        var input   = require( 'views/index' ),
+        var input   = require( 'views/index' );
         var locals  = { name : 'Bibi' };
         var options = { cached : true };
         var output  = thunder.render( input, locals, options );
