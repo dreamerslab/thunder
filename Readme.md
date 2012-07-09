@@ -65,10 +65,10 @@ Simple output ( escape ) | `& < > "` --> `&amp; &lt; &gt; &quot;`
     Usage: thunder [command] [argument(s)]
 
     Commands:
-      -v, --version    Display coke version
+      -v, --version    Display thunder version
       h,  help         Display usage information
       b,  build [args] Precompile templates
-      w,  watch [args] Run coke server
+      w,  watch [args] Watch for changes
 
     Arguments for `build` & `watch commands`
       -i, --input=/new/input/dir   Default: ./templates
