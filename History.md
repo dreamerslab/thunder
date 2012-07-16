@@ -1,5 +1,13 @@
 # History
 
+## 0.1.3 / 2012-07-17
+
+- [bug fix] Remove anonymous fn wrapper for generated browser templates
+- [bug fix] Assign thunder to root
+- Add browser examples
+
+
+
 ## 0.1.2 / 2012-07-09
 
 - [bug fix] Attach `thunder` to `window` instead of calling it on browsers
