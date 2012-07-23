@@ -1,5 +1,11 @@
 # History
 
+## 0.1.4 / 2012-07-23
+
+- [refactoring] Use `fs` instead of `path` for node v0.8.x
+
+
+
 ## 0.1.3 / 2012-07-17
 
 - [bug fix] Remove anonymous fn wrapper for generated browser templates

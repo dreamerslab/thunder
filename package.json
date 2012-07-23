@@ -1,6 +1,6 @@
 {
   "name"       : "thunder",
-  "version"    : "0.1.3",
+  "version"    : "0.1.4",
   "description": "One of the fastest JavaScript template engine for Node.js and browsers.",
   "bin"        : {
     "thunder": "./bin/thunder"
@@ -13,7 +13,7 @@
   "dependencies": {
     "cli-color": "0.1.7",
     "mkdirp"   : "0.3.3",
-    "rmdir"    : "0.0.3",
+    "rmdir"    : "1.0.0",
     "watchr"   : "2.1.2"
   },
   "repository"  : {
@@ -21,7 +21,7 @@
     "url" : "https://github.com/dreamerslab/thunder.git"
   },
   "main"   : "index",
-  "engines": [ "node >= 0.4.0" ],
+  "engines": [ "node >= 0.8.0" ],
   "licenses": [{
     "type": "MIT",
     "url" : "http://en.wikipedia.org/wiki/MIT_License"
