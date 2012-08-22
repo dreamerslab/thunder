@@ -1,5 +1,13 @@
 # History
 
+## 0.1.5 / 2012-08-22
+
+- [refactoring] Add custom key in `cache` method
+- [refactoring] Hard coding version number
+- [update packages] mkdirp->0.3.4, watchr->2.1.3
+
+
+
 ## 0.1.4 / 2012-07-23
 
 - [refactoring] Use `fs` instead of `path` for node v0.8.x
