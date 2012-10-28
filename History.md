@@ -1,5 +1,11 @@
 # History
 
+## 0.1.6 / 2012-10-28
+
+- [new feature] Add `clear` method to clear out the cache
+
+
+
 ## 0.1.5 / 2012-08-22
 
 - [refactoring] Add custom key in `cache` method
