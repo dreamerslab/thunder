@@ -1,5 +1,12 @@
 # History
 
+## 0.1.7 / 2013-07-06
+
+- [refactoring] Move `html_to_text` from thunder to utils
+- [update packages] cli-color->0.2.2, mkdirp->0.3.5, watchr->2.4.3
+
+
+
 ## 0.1.6 / 2012-10-28
 
 - [new feature] Add `clear` method to clear out the cache
