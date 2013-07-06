@@ -171,10 +171,6 @@ For advance usages please checkout the API block.
 
 ## API
 
-### thunder.html_to_text( input );
-
-Compile the HTML templates to JavaScript strings. It is only used for client-side templates.
-
 #### Arguments
 
 > input
