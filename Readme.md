@@ -100,7 +100,7 @@ For advance usages please checkout the API block.
 
 
 
-### Express
+### Express 2.x
 
     app.configure( function(){
       ...
