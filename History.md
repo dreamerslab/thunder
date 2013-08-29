@@ -1,5 +1,11 @@
 # History
 
+## 0.1.8 / 2013-08-29
+
+- [bug fix] Add `update` event for newer node version
+
+
+
 ## 0.1.7 / 2013-07-06
 
 - [refactoring] Move `html_to_text` from thunder to utils
