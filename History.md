@@ -1,8 +1,14 @@
 # History
 
+## 0.1.9 / 2013-09-26
+
+- [new feature] Added `custom delimiters` in settings
+
+
+
 ## 0.1.8 / 2013-08-29
 
-- [bug fix] Add `update` event for newer node version
+- [bug fix] Added `update` event for newer node version
 
 
 
@@ -15,13 +21,13 @@
 
 ## 0.1.6 / 2012-10-28
 
-- [new feature] Add `clear` method to clear out the cache
+- [new feature] Added `clear` method to clear out the cache
 
 
 
 ## 0.1.5 / 2012-08-22
 
-- [refactoring] Add custom key in `cache` method
+- [refactoring] Added custom key in `cache` method
 - [refactoring] Hard coding version number
 - [update packages] mkdirp->0.3.4, watchr->2.1.3
 
@@ -37,7 +43,7 @@
 
 - [bug fix] Remove anonymous fn wrapper for generated browser templates
 - [bug fix] Assign thunder to root
-- Add browser examples
+- Added browser examples
 
 
 
