@@ -1,8 +1,15 @@
 # History
 
+## 0.1.10 / 2013-12-12
+
+- [bug fix] `<? some_code ?>` evaluation fail without `;` in the end
+- [update packages] cli-color->0.2.3, rmdir->1.0.1, watchr->2.4.4
+
+
+
 ## 0.1.9 / 2013-09-26
 
-- [new feature] Added `custom delimiters` in settings
+- [new feature] Added `custom delimiters` to settings
 
 
 
