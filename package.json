@@ -1,6 +1,6 @@
 {
   "name"       : "thunder",
-  "version"    : "0.1.9",
+  "version"    : "0.1.10",
   "description": "One of the fastest JavaScript template engine for Node.js and browsers.",
   "bin"        : {
     "thunder": "./bin/thunder"
@@ -11,10 +11,10 @@
   ],
   "author"      : "dreamerslab <ben@dreamerslab.com>",
   "dependencies": {
-    "cli-color": "0.2.2",
+    "cli-color": "0.2.3",
     "mkdirp"   : "0.3.5",
-    "rmdir"    : "1.0.0",
-    "watchr"   : "2.4.3"
+    "rmdir"    : "1.0.1",
+    "watchr"   : "2.4.4"
   },
   "repository"  : {
     "type": "git",
