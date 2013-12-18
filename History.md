@@ -1,5 +1,11 @@
 # History
 
+## 0.1.11 / 2013-12-18
+
+- [update packages] rmdir->1.0.3, watchr->2.4.6
+
+
+
 ## 0.1.10 / 2013-12-12
 
 - [bug fix] `<? some_code ?>` evaluation fail without `;` in the end
