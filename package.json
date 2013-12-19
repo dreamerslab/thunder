@@ -1,6 +1,6 @@
 {
   "name"       : "thunder",
-  "version"    : "0.1.12",
+  "version"    : "0.1.13",
   "description": "One of the fastest JavaScript template engine for Node.js and browsers.",
   "bin"        : {
     "thunder": "./bin/thunder"

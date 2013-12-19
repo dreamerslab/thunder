@@ -1,5 +1,11 @@
 # History
 
+## 0.1.13 / 2013-12-18
+
+- [refactoring] `\n\r` -> `\r\n`
+
+
+
 ## 0.1.12 / 2013-12-18
 
 - [refactoring] Do not trim all white space
