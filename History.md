@@ -1,5 +1,11 @@
 # History
 
+## 0.2.0 / 2014-05-26
+
+- [new feature] ablity to compile browserify templates
+
+
+
 ## 0.1.13 / 2013-12-18
 
 - [refactoring] `\n\r` -> `\r\n`
