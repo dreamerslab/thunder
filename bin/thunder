@@ -6,22 +6,34 @@ var cli     = require( '../lib/cli' );
 var args    = process.argv.slice( 2 );
 var command = args.shift();
 
-var cwd           = process.cwd();
-var input_dir     = cwd + '/templates/';
-var output_dir    = cwd + '/views/';
-var use_requirejs = true;
+var cwd            = process.cwd();
+var input_dir      = cwd + '/templates/';
+var output_dir     = cwd + '/views/';
+var use_browserify = false;
+var use_requirejs  = false;
+
+var get_layout_format = function ( use_browserify, use_requirejs ){
+  if( use_browserify ) return 'browserify';
+  if( use_requirejs )  return 'requirejs';
+
+  return 'window';
+};
 
 args.forEach( function ( arg ){
   arg = arg.trim();
 
-  var matched_input   = arg.match( /^(-i=|--input=)(.*)/ );
-  var matched_output  = arg.match( /^(-o=|--output=)(.*)/ );
-  var matched_require = arg.match( /^(-r=|--requirejs=)(.*)/ );
+  var matched_input      = arg.match( /^(-i=|--input=)(.*)/ );
+  var matched_output     = arg.match( /^(-o=|--output=)(.*)/ );
+  var matched_browserify = arg.match( /^(-b|--browserify)(.*)/ );
+  var matched_require    = arg.match( /^(-r|--requirejs)(.*)/ );
 
-  if( matched_input )   input_dir     = matched_input[ 2 ];
-  if( matched_output )  output_dir    = matched_output[ 2 ];
-  if( matched_require ) use_requirejs = matched_require[ 2 ];
+  if( matched_input )      input_dir      = matched_input[ 2 ];
+  if( matched_output )     output_dir     = matched_output[ 2 ];
+  if( matched_browserify ) use_browserify = true;
+  if( matched_require )    use_requirejs  = true;
 });
+
+var layout_format = get_layout_format( use_browserify, use_requirejs );
 
 switch( command ){
   case '-v':
@@ -32,14 +44,14 @@ switch( command ){
 
   case 'b':
   case 'build':
-    cli.build( input_dir, output_dir, use_requirejs );
+    cli.build( input_dir, output_dir, layout_format );
     exit = false;
 
     break;
 
   case 'w':
   case 'watch':
-    cli.watch( input_dir, output_dir, use_requirejs );
+    cli.watch( input_dir, output_dir, layout_format );
     exit = false;
 
     break;
